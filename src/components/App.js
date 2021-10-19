@@ -1,26 +1,18 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 function App() {
+  const dispatch = useDispatch();
+  const questions = useSelector((state) => state.questions);
+  const users = useSelector((state) => state.users);
   useEffect(() => {
     try {
-      handleInitialData();
+      dispatch(handleInitialData());
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
-  }, []);
-  // useEffect(() => {
-  //   try {
-  //     async function fetchData() {
-  //       const { questions, users } = await getInitialData();
-  //       const getQuestions = await questions();
-  //       const getUsers = await users();
-  //       console.log(getQuestions, getUsers);
-  //     }
-  //     fetchData();
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }, []);
+  }, [dispatch]);
+
   return <div>Hello</div>;
 }
 
