@@ -1,0 +1,7 @@
+.coatContainer {
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

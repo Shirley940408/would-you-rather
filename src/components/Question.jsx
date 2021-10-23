@@ -4,19 +4,17 @@ import ScoreSheet from "./ScoreSheet";
 import ContentPlate from "./ContentPlate";
 import Avatar from "./componentLab/Avatar";
 import styles from "./QuestionBlock.module.css";
-const questionBlock = (props) => {
+const question = (props) => {
   return (
     <div className={styles.question}>
       <Avatar src={props.src} class={styles.avatar} />
       <VerticalDivider class={styles.verticalDivider} />
       <div className="template">
         <h3 className="title">{props.userName}</h3>
-        <ContentPlate questions={props.questions} answers={props.answers} />
+        <div>{props.question}</div>
       </div>
-      <VerticalDivider class={styles.verticalDivider} />
-      <ScoreSheet scores={props.answers + props.questions} />
     </div>
   );
 };
 
-export default questionBlock;
+export default question;

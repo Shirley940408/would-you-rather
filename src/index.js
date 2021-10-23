@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/App";
+import ScorePage from "./components/ScorePage";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import middleware from "./middleware";
@@ -11,7 +11,7 @@ const store = createStore(reducers, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ScorePage />
   </Provider>,
   document.getElementById("root")
 );

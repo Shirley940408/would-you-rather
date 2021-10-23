@@ -5,3 +5,11 @@
 .verticalDivider {
   height: 160px;
 }
+
+.question {
+  min-height: 160px;
+  border: 2px solid var(--grey);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+.container {
+  min-width: 50px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
