@@ -1,0 +1,22 @@
+.question {
+  min-height: 160px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  height: 168px;
+  width: 168px;
+}
+.verticalDivider {
+  height: 160px;
+}
+.paragraph {
+  margin: 20px 10px;
+}
+.button {
+  display: block;
+  border: 1px solid var(--green);
+  padding: 10px;
+  border-radius: 5px;
+}

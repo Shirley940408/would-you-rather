@@ -1,17 +1,17 @@
 import React from "react";
 import VerticalDivider from "./componentLab/VerticalDivider";
-import ScoreSheet from "./ScoreSheet";
-import ContentPlate from "./ContentPlate";
 import Avatar from "./componentLab/Avatar";
-import styles from "./QuestionBlock.module.css";
+import Button from "./componentLab/Button";
+import styles from "./Question.module.css";
 const question = (props) => {
   return (
     <div className={styles.question}>
       <Avatar src={props.src} class={styles.avatar} />
       <VerticalDivider class={styles.verticalDivider} />
       <div className="template">
-        <h3 className="title">{props.userName}</h3>
-        <div>{props.question}</div>
+        <h3 className="title">Would you rather</h3>
+        <div className={styles.paragraph}>{props.question}</div>
+        <Button text="View Poll" class={styles.button} />
       </div>
     </div>
   );

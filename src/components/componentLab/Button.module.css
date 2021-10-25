@@ -1,0 +1,11 @@
+.button {
+  border: 0;
+  background-color: transparent;
+  color: var(--green);
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+.active {
+  background-color: var(--grey);
+}
