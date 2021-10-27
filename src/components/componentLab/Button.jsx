@@ -8,6 +8,7 @@ export default function Button(props) {
           ? styles.button + " " + styles.active + " " + props.class
           : styles.button + " " + props.class
       }
+      onClick={props.onClick}
     >
       {props.text}
     </button>

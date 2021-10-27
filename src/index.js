@@ -4,6 +4,8 @@ import "./index.css";
 import ScorePage from "./components/ScorePage";
 import QuestionBoard from "./components/QuestionBoard";
 import reportWebVitals from "./reportWebVitals";
+import SignInContent from "./components/SignInContent";
+import SignIn from "./components/SignIn";
 import { createStore } from "redux";
 import middleware from "./middleware";
 import { Provider } from "react-redux";
@@ -12,7 +14,7 @@ const store = createStore(reducers, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <QuestionBoard />
+    <SignIn />
   </Provider>,
   document.getElementById("root")
 );

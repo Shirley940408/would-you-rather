@@ -1,13 +1,1 @@
-.questionInnercontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.marginAround {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.marginEnd {
-  margin: 20px;
-}
+
