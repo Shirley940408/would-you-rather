@@ -1,22 +1,28 @@
 import React from "react";
 import styles from "./NavBar.module.css";
 import Avatar from "./componentLab/Avatar";
-import { useSelector } from "react-redux";
-import { NavLink, useLocation } from "react-router-dom";
+import { removeAuthedUser } from "../actions/removeAuthedUser";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import HorizontalDivider from "./componentLab/HorizontalDivider";
 export default function NavBar() {
-  const location = useLocation();
+  const dispatch = useDispatch();
   const userId = useSelector((state) => state.authedUser);
   const users = useSelector((state) => state.users);
+
   console.log(users, userId);
   return (
     <div className={styles.navbarContainer}>
-      <NavLink to="/" className={styles.home}>
+      <NavLink to={userId ? "/home" : "/"} className={styles.home}>
         Home
       </NavLink>
-      <NavLink to="/newQuestion" className={styles.newQuestion}>
+      <NavLink
+        to={userId ? "/newQuestion" : "/"}
+        className={styles.newQuestion}
+      >
         New Question
       </NavLink>
-      <NavLink to="/scorePage" className={styles.leaderBoard}>
+      <NavLink to={userId ? "/scorePage" : "/"} className={styles.leaderBoard}>
         Leader Board
       </NavLink>
       {users[userId] && (
@@ -25,9 +31,14 @@ export default function NavBar() {
           <Avatar src={users[userId].avatarURL} />
         </div>
       )}
-      <NavLink to="/signIn" className={styles.logout}>
+      <NavLink
+        to="/"
+        className={styles.logout}
+        onClick={() => dispatch(removeAuthedUser())}
+      >
         Logout
       </NavLink>
+      <HorizontalDivider class={styles.bottomColor} />
     </div>
   );
 }

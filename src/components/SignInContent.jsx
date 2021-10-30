@@ -10,7 +10,7 @@ import usePrevious from "../utils/usePrevious";
 export default function SignInContent(props) {
   const history = useHistory();
   const [listStatus, setListStatus] = useState(false);
-  const [activeUser, setActiveUser] = useState("johndoe");
+  const [activeUser, setActiveUser] = useState("");
   const previousStatus = usePrevious(listStatus);
   const dispatch = useDispatch();
   const ListClicked = (userClicked) => {
@@ -19,8 +19,11 @@ export default function SignInContent(props) {
   };
 
   const saveUser = () => {
+    if (activeUser === "") {
+      return;
+    }
     dispatch(addAuthedUser(activeUser));
-    history.push("/");
+    history.push("/home");
   };
 
   return (
@@ -30,7 +33,7 @@ export default function SignInContent(props) {
       <div className={styles.listContainer}>
         <div className={styles.select} onClick={() => setListStatus(true)}>
           <span>
-            {previousStatus === false && listStatus === false
+            {listStatus === false && activeUser === ""
               ? "Select user"
               : props.users[activeUser]
               ? props.users[activeUser].name

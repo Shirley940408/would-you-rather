@@ -6,13 +6,42 @@
   position: absolute;
   left: 95px;
 }
+.home:hover {
+  position: absolute;
+  left: 95px;
+  border-bottom: 21px solid var(--green);
+  border-left: 29px solid transparent;
+  border-right: 29px solid transparent;
+  height: 20px;
+  width: 100px;
+}
+
 .newQuestion {
   position: absolute;
-  left: 197px;
+  left: 207px;
 }
+.newQuestion:hover {
+  position: absolute;
+  left: 207px;
+  border-bottom: 21px solid var(--green);
+  border-left: 29px solid transparent;
+  border-right: 29px solid transparent;
+  height: 20px;
+  width: 159px;
+}
+
 .leaderBoard {
   position: absolute;
+  left: 371px;
+}
+.leaderBoard:hover {
+  position: absolute;
   left: 351px;
+  border-bottom: 21px solid var(--green);
+  border-left: 29px solid transparent;
+  border-right: 29px solid transparent;
+  height: 20px;
+  width: 155px;
 }
 .helloUser {
   position: absolute;
@@ -24,4 +53,13 @@
 .logout {
   position: absolute;
   right: 73px;
+}
+
+.bottomColor {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 100vw;
+  border-color: var(--green);
+  z-index: -1;
 }

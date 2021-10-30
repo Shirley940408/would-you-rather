@@ -10,8 +10,8 @@ export default function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact component={QuestionBoard} path="/" />
-          <Route exact component={SignIn} path="/signIn" />
+          <Route exact component={QuestionBoard} path="/home" />
+          <Route exact component={SignIn} path="/" />
           <Route exact component={ScorePage} path="/scorePage" />
         </Switch>
       </Router>
