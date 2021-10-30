@@ -6,15 +6,17 @@ import QuestionBoard from "./components/QuestionBoard";
 import reportWebVitals from "./reportWebVitals";
 import SignInContent from "./components/SignInContent";
 import SignIn from "./components/SignIn";
+import App from "./components/App";
 import { createStore } from "redux";
 import middleware from "./middleware";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
+
 const store = createStore(reducers, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <SignIn />
+    <App />
   </Provider>,
   document.getElementById("root")
 );

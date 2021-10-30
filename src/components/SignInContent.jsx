@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 import styles from "./SignInContent.module.css";
 import Button from "./componentLab/Button";
 import List from "./List";
+import { useHistory } from "react-router-dom";
 import { handleInitialData } from "../actions/shared";
 import { addAuthedUser } from "../actions/authedUser";
 import usePrevious from "../utils/usePrevious";
 export default function SignInContent(props) {
+  const history = useHistory();
   const [listStatus, setListStatus] = useState(false);
   const [activeUser, setActiveUser] = useState("johndoe");
   const previousStatus = usePrevious(listStatus);
@@ -18,6 +20,7 @@ export default function SignInContent(props) {
 
   const saveUser = () => {
     dispatch(addAuthedUser(activeUser));
+    history.push("/");
   };
 
   return (

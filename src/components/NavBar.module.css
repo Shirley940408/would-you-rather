@@ -1,0 +1,27 @@
+.navbarContainer {
+  margin: 59px 0;
+  display: flex;
+}
+.home {
+  position: absolute;
+  left: 95px;
+}
+.newQuestion {
+  position: absolute;
+  left: 197px;
+}
+.leaderBoard {
+  position: absolute;
+  left: 351px;
+}
+.helloUser {
+  position: absolute;
+  right: 129px;
+  top: 33px;
+  display: flex;
+  align-items: center;
+}
+.logout {
+  position: absolute;
+  right: 73px;
+}
