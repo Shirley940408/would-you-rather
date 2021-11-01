@@ -4,6 +4,7 @@ import ScorePage from "./ScorePage";
 import QuestionBoard from "./QuestionBoard";
 import NavBar from "./NavBar";
 import SignIn from "./SignIn";
+import CreateNewQuestion from "./CreateNewQuestion";
 export default function App() {
   return (
     <div className="container">
@@ -11,6 +12,7 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact component={QuestionBoard} path="/home" />
+          <Route component={CreateNewQuestion} path="/newQuestion" />
           <Route exact component={SignIn} path="/" />
           <Route exact component={ScorePage} path="/scorePage" />
         </Switch>
