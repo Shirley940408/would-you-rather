@@ -5,10 +5,11 @@ export default function ContainerCoat(
   TitleComponent,
   propsOfWrapped = {},
   propsOfTop = {},
-  extraClass = ""
+  extraClass = "",
+  key = ""
 ) {
   return (
-    <div className={styles.coatContainer + " " + extraClass}>
+    <div className={styles.coatContainer + " " + extraClass} key={key}>
       <TitleComponent {...propsOfTop} />
       <WrappedComponent {...propsOfWrapped} />
     </div>

@@ -1,5 +1,6 @@
 .question {
   min-height: 160px;
+  min-width: 711px;
   border-radius: 5px;
   display: flex;
   align-items: center;

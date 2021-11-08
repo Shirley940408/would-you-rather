@@ -1,5 +1,4 @@
 import React from "react";
-
 import ContainerCoat from "./componentLab/ContainerCoat";
 import CreateNewQuestionContent from "./CreateNewQuestionContent";
 import QuestionTop from "./QuestionTop";
