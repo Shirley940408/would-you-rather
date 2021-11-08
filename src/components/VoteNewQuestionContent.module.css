@@ -1,0 +1,27 @@
+.question {
+  border-top: 1px solid var(--grey);
+  min-height: 160px;
+  border-radius: 5px;
+  display: flex;
+  min-width: 333px;
+  align-items: center;
+}
+.checkbox {
+  border: 2px dotted #00f;
+  display: block;
+  background: #ff0000;
+}
+.textInput {
+  width: 299px;
+  display: flex;
+  align-items: center;
+}
+.button {
+  background-color: var(--green);
+  color: white;
+  border-radius: 3px;
+}
+.avatar {
+  height: 130px;
+  width: 130px;
+}

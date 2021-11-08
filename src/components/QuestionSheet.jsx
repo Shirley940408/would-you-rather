@@ -16,6 +16,9 @@ export default function QuestionSheet(props) {
               " or " +
               props.questions[question].optionTwo.text,
             src: props.users[props.questions[question].author].avatarURL,
+            user: props.users[props.questions[question].author].name,
+            userId: props.users[props.questions[question].author].id,
+            qid: props.questions[question].id,
           },
           { text: props.users[props.questions[question].author].name + " ask" },
           Object.keys(props.questions).length - 1 === index

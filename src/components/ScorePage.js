@@ -22,29 +22,15 @@ function ScorePage() {
         users[b].questions.length -
         (Object.keys(users[a].answers).length + users[a].questions.length)
     );
-    return sortedUsers.map(
-      (user) => (
-        <QuestionBlock
-          userName={users[user].name}
-          key={user}
-          answers={Object.keys(users[user].answers).length}
-          questions={users[user].questions.length}
-          src={users[user].avatarURL}
-        />
-      )
-      // ContainerCoat(
-      //   QuestionBlock,
-      //   QuestionTop,
-      //   {
-      //     userName: users[user].name,
-      //     key: user,
-      //     answers: Object.keys(users[user].answers).length,
-      //     questions: users[user].questions.length,
-      //     src: users[user].avatarURL,
-      //   },
-      //   { text: "asked By ..." }
-      // )
-    );
+    return sortedUsers.map((user) => (
+      <QuestionBlock
+        userName={users[user].name}
+        key={user}
+        answers={Object.keys(users[user].answers).length}
+        questions={users[user].questions.length}
+        src={users[user].avatarURL}
+      />
+    ));
   };
   return <div className="container">{userList()}</div>;
 }

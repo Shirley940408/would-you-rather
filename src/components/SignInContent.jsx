@@ -44,7 +44,12 @@ export default function SignInContent(props) {
         {listStatus && props.users && (
           <div className={styles.listArray}>
             {Object.keys(props.users).map((user) => (
-              <List users={props.users} user={user} onClick={ListClicked} />
+              <List
+                key={user}
+                users={props.users}
+                user={user}
+                onClick={ListClicked}
+              />
             ))}
           </div>
         )}
