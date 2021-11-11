@@ -13,7 +13,7 @@
     <a href="https://github.com/Shirley940408/would-you-rather"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Shirley940408/would-you-rather/demo">View Demo</a>
+    <a href="https://github.com/Shirley940408/would-you-rather/demo.mp4">View Demo</a>
   </p>
 </div>
 
