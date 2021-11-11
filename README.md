@@ -1,4 +1,41 @@
-# Getting Started with Create React App
+<div id="top"></div>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+ <img src="https://scx1.b-cdn.net/csz/news/800a/2018/peoplemakedi.jpg" alt="Logo" width="80" height="80">
+
+  <h3 align="center">Would You Rather</h3>
+
+  <p align="center">
+    An social platform for ask and answer questions!
+    <br />
+    <a href="https://github.com/Shirley940408/would-you-rather"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Shirley940408/would-you-rather/demo">View Demo</a>
+  </p>
+</div>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+This app is a online platform for asking puzzled questions and voting them.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+- [React.js](https://reactjs.org/)
+- [React Redux](https://react-redux.js.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- GETTING STARTED -->
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +105,59 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = "ENTER YOUR API";
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Shuo Yan - [LinkedIn](https://www.linkedin.com/in/shuoyan-react-developer/) - shuoonlinestudy@gmail.com
+
+Project Link: [https://github.com/Shirley940408/would-you-rather](https://github.com/Shirley940408/would-you-rather)
+
+<p align="right">(<a href="#top">back to top</a>)</p>

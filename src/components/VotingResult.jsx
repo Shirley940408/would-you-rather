@@ -12,7 +12,6 @@ export default function VotingResult() {
     history.push("/");
     return null;
   }
-
   const { src, answer, qid, author } = location.state;
   return ContainerCoat(
     VotingResultContent,

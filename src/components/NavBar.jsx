@@ -16,13 +16,13 @@ export default function NavBar() {
       <NavLink to={userId ? "/home" : "/"} className={styles.home}>
         Home
       </NavLink>
-      <NavLink
-        to={userId ? "/newQuestion" : "/"}
-        className={styles.newQuestion}
-      >
+      <NavLink to={userId ? "/add" : "/"} className={styles.newQuestion}>
         New Question
       </NavLink>
-      <NavLink to={userId ? "/scorePage" : "/"} className={styles.leaderBoard}>
+      <NavLink
+        to={userId ? "/leaderBoard" : "/"}
+        className={styles.leaderBoard}
+      >
         Leader Board
       </NavLink>
       {users[userId] && (

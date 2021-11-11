@@ -11,6 +11,7 @@ function QuestionBoard() {
   const [unanswered, setUnanswered] = useState(false);
   const [answered, setAnswered] = useState(true);
   const dispatch = useDispatch();
+  const questions = useSelector((state) => state.questions);
   if (!authedUser) {
     history.push("/");
   }
@@ -21,24 +22,27 @@ function QuestionBoard() {
       console.error(e);
     }
   }, [dispatch]);
-  const questions = useSelector((state) => state.questions);
   const buttonClicked = () => {
     setUnanswered(!unanswered);
     setAnswered(!answered);
   };
-  const questionsUnansweredKey = Object.keys(questions).filter(
-    (key) =>
-      questions[key].optionOne.votes.length === 0 &&
-      questions[key].optionTwo.votes.length === 0
-  );
+  const questionsUnansweredKey = Object.keys(questions)
+    .filter(
+      (key) =>
+        questions[key].optionOne.votes.length === 0 &&
+        questions[key].optionTwo.votes.length === 0
+    )
+    .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
   const questionsUnanswered = questionsUnansweredKey.map(
     (key) => questions[key]
   );
-  const questionsAnsweredKey = Object.keys(questions).filter(
-    (key) =>
-      questions[key].optionOne.votes.length !== 0 ||
-      questions[key].optionTwo.votes.length !== 0
-  );
+  const questionsAnsweredKey = Object.keys(questions)
+    .filter(
+      (key) =>
+        questions[key].optionOne.votes.length !== 0 ||
+        questions[key].optionTwo.votes.length !== 0
+    )
+    .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
   const questionsAnswered = questionsAnsweredKey.map((key) => questions[key]);
   const users = useSelector((state) => state.users);
   console.log(questions, questionsUnanswered, questionsAnswered);

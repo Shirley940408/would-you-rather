@@ -8,11 +8,11 @@ import { saveQuestion } from "../utils/api";
 export default function CreateNewQuestionContent() {
   const history = useHistory();
   const authedUser = useSelector((state) => state.authedUser);
+  const [inputOne, setInputOne] = useState("");
+  const [inputTwo, setInputTwo] = useState("");
   if (!authedUser) {
     history.push("/");
   }
-  const [inputOne, setInputOne] = useState("");
-  const [inputTwo, setInputTwo] = useState("");
   const handleClick = () => {
     return saveQuestion({
       optionOneText: inputOne,
