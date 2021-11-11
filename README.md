@@ -13,7 +13,7 @@
     <a href="https://github.com/Shirley940408/would-you-rather"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Shirley940408/would-you-rather/demo.mp4">View Demo</a>
+    <a href="#about-the-project">View Demo</a>
   </p>
 </div>
 
@@ -22,6 +22,7 @@
 ## About The Project
 
 This app is a online platform for asking puzzled questions and voting them.
+![Alt Text](demo.gif)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
