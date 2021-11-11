@@ -6,10 +6,13 @@ import Button from "./componentLab/Button";
 import styles from "./CreateNewQuestionContent.module.css";
 import { saveQuestion } from "../utils/api";
 export default function CreateNewQuestionContent() {
+  const history = useHistory();
+  const authedUser = useSelector((state) => state.authedUser);
+  if (!authedUser) {
+    history.push("/");
+  }
   const [inputOne, setInputOne] = useState("");
   const [inputTwo, setInputTwo] = useState("");
-  const authedUser = useSelector((state) => state.authedUser);
-  const history = useHistory();
   const handleClick = () => {
     return saveQuestion({
       optionOneText: inputOne,

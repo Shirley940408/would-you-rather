@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { handleInitialData } from "../actions/shared";
 import QuestionBlock from "./QuestionBlock";
-import ContainerCoat from "./componentLab/ContainerCoat";
-import QuestionTop from "./QuestionTop";
 function ScorePage() {
+  const history = useHistory();
+  const authedUser = useSelector((state) => state.authedUser);
+  if (!authedUser) {
+    history.push("/");
+  }
   const dispatch = useDispatch();
   useEffect(() => {
     try {
@@ -13,7 +17,6 @@ function ScorePage() {
       console.error(e);
     }
   }, [dispatch]);
-  const questions = useSelector((state) => state.questions);
   const users = useSelector((state) => state.users);
   const userList = () => {
     const sortedUsers = Object.keys(users).sort(

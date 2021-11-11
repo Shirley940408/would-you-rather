@@ -13,12 +13,12 @@ export default function App() {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact component={QuestionBoard} path="/home" />
-          <Route component={CreateNewQuestionContent} path="/newQuestion" />
+          <Route component={QuestionBoard} path="/home" />
+          <Route component={CreateNewQuestionContent} path="/add" />
           <Route exact component={SignIn} path="/" />
-          <Route exact component={ScorePage} path="/scorePage" />
-          <Route exact component={VoteNewQuestion} path="/voteNewQuestion" />
-          <Route exact component={VotingResult} path="/votingResult" />
+          <Route component={ScorePage} path="/leaderBoard" />
+          <Route component={VoteNewQuestion} path="/vote" />
+          <Route component={VotingResult} path="/votingResult" />
         </Switch>
       </Router>
     </div>
