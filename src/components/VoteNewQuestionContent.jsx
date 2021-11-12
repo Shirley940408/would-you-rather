@@ -4,9 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "./componentLab/Button";
 import Avatar from "./componentLab/Avatar";
 import { handleSaveVote } from "../actions/shared";
-import { saveQuestionAnswer } from "../utils/api";
-import { addCurrentVote } from "../actions/addCurrentVote";
-import { removeCurrentVote } from "../actions/removeCurrentVote";
 import VerticalDivider from "./componentLab/VerticalDivider";
 import styles from "./VoteNewQuestionContent.module.css";
 export default function VoteNewQuestionContent(props) {

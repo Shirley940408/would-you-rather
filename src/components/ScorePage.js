@@ -1,22 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { handleInitialData } from "../actions/shared";
+import React from "react";
+import { useSelector } from "react-redux";
 import QuestionBlock from "./QuestionBlock";
 function ScorePage() {
-  const history = useHistory();
-  const authedUser = useSelector((state) => state.authedUser);
-  if (!authedUser) {
-    history.push("/");
-  }
-  const dispatch = useDispatch();
-  useEffect(() => {
-    try {
-      dispatch(handleInitialData());
-    } catch (e) {
-      console.error(e);
-    }
-  }, [dispatch]);
   const users = useSelector((state) => state.users);
   const userList = () => {
     const sortedUsers = Object.keys(users).sort(

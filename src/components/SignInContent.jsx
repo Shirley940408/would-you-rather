@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import styles from "./SignInContent.module.css";
 import Button from "./componentLab/Button";
 import List from "./List";
 import { useHistory } from "react-router-dom";
-import { handleInitialData } from "../actions/shared";
 import { addAuthedUser } from "../actions/authedUser";
-import usePrevious from "../utils/usePrevious";
 export default function SignInContent(props) {
   const history = useHistory();
   const [listStatus, setListStatus] = useState(false);
   const [activeUser, setActiveUser] = useState("");
-  const previousStatus = usePrevious(listStatus);
   const dispatch = useDispatch();
+
   const ListClicked = (userClicked) => {
     userClicked !== activeUser && setActiveUser(userClicked);
     setListStatus(false);
   };
-
   const saveUser = () => {
     if (activeUser === "") {
       return;
     }
     dispatch(addAuthedUser(activeUser));
-    history.push("/home");
+    history.push(props.prevRoute ? props.prevRoute : "/home");
   };
 
   return (

@@ -13,14 +13,29 @@ export default function NavBar() {
   console.log(users, userId);
   return (
     <div className={styles.navbarContainer}>
-      <NavLink to={userId ? "/home" : "/"} className={styles.home}>
+      <NavLink
+        to={{
+          pathname: userId ? "/home" : "/",
+          state: { prevRoute: userId ? "" : "/home" },
+        }}
+        className={styles.home}
+      >
         Home
       </NavLink>
-      <NavLink to={userId ? "/add" : "/"} className={styles.newQuestion}>
+      <NavLink
+        to={{
+          pathname: userId ? "/add" : "/",
+          state: { prevRoute: userId ? "" : "/add" },
+        }}
+        className={styles.newQuestion}
+      >
         New Question
       </NavLink>
       <NavLink
-        to={userId ? "/leaderBoard" : "/"}
+        to={{
+          pathname: userId ? "/leaderBoard" : "/",
+          state: { prevRoute: userId ? "" : "/leaderBoard" },
+        }}
         className={styles.leaderBoard}
       >
         Leader Board

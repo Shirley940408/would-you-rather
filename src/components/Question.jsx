@@ -9,7 +9,7 @@ export default function question(props) {
   let history = useHistory();
   const votingQuestion = () => {
     const questionsArray = props.question.split(" or ");
-    history.push("/vote", {
+    history.push(`/questions/${props.qid}`, {
       optionOne: questionsArray[0],
       optionTwo: questionsArray[1],
       authorId: props.userId,

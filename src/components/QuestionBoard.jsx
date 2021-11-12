@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { handleInitialData } from "../actions/shared";
 import ButtonCombo from "./ButtonCombo";
 import ContainerCoat from "./componentLab/ContainerCoat";
 import QuestionSheet from "./QuestionSheet";
 function QuestionBoard() {
-  const history = useHistory();
-  const authedUser = useSelector((state) => state.authedUser);
-  const [unanswered, setUnanswered] = useState(false);
-  const [answered, setAnswered] = useState(true);
+  const [unanswered, setUnanswered] = useState(true);
+  const [answered, setAnswered] = useState(false);
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions);
-  if (!authedUser) {
-    history.push("/");
-  }
   useEffect(() => {
     try {
       dispatch(handleInitialData());
