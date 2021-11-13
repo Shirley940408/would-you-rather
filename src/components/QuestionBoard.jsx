@@ -5,8 +5,8 @@ import ButtonCombo from "./ButtonCombo";
 import ContainerCoat from "./componentLab/ContainerCoat";
 import QuestionSheet from "./QuestionSheet";
 function QuestionBoard() {
-  const [unanswered, setUnanswered] = useState(true);
-  const [answered, setAnswered] = useState(false);
+  const [unanswered, setUnanswered] = useState(false);
+  const [answered, setAnswered] = useState(true);
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions);
   useEffect(() => {
@@ -16,10 +16,6 @@ function QuestionBoard() {
       console.error(e);
     }
   }, [dispatch]);
-  const buttonClicked = () => {
-    setUnanswered(!unanswered);
-    setAnswered(!answered);
-  };
   const questionsUnansweredKey = Object.keys(questions)
     .filter(
       (key) =>
@@ -27,9 +23,19 @@ function QuestionBoard() {
         questions[key].optionTwo.votes.length === 0
     )
     .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+  useEffect(() => {
+    if (questionsUnansweredKey.length) {
+      setUnanswered(true);
+      setAnswered(false);
+    }
+  }, [questionsUnansweredKey.length, setUnanswered, setAnswered]);
   const questionsUnanswered = questionsUnansweredKey.map(
     (key) => questions[key]
   );
+  const buttonClicked = () => {
+    setUnanswered(!unanswered);
+    setAnswered(!answered);
+  };
   const questionsAnsweredKey = Object.keys(questions)
     .filter(
       (key) =>
