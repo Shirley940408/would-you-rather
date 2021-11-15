@@ -21,7 +21,9 @@ export default function SignInContent(props) {
       return;
     }
     dispatch(addAuthedUser(activeUser));
-    history.push(props.prevRoute ? props.prevRoute : "/home");
+    history.push({
+      pathname: props.prevRoute ? props.prevRoute : "/home",
+    });
   };
 
   return (

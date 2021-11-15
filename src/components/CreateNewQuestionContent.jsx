@@ -10,9 +10,7 @@ export default function CreateNewQuestionContent() {
   const authedUser = useSelector((state) => state.authedUser);
   const [inputOne, setInputOne] = useState("");
   const [inputTwo, setInputTwo] = useState("");
-  if (!authedUser) {
-    history.push("/");
-  }
+
   const handleClick = () => {
     return saveQuestion({
       optionOneText: inputOne,

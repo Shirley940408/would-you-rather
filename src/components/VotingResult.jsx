@@ -9,7 +9,7 @@ export default function VotingResult() {
   const authedUser = useSelector((state) => state.authedUser);
   const location = useLocation();
   if (!authedUser) {
-    history.push("/");
+    history.push({ pathname: "/" });
     return null;
   }
   const { src, answer, qid, author } = location.state;

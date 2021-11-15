@@ -8,6 +8,7 @@ const lightGreen = "#CDFFDD";
 export default function VotingResultContent() {
   const questions = useSelector((state) => state.questions);
   const location = useLocation();
+
   const { answer, qid, src } = location.state;
   return (
     <div className={styles.container}>
@@ -47,6 +48,10 @@ export default function VotingResultContent() {
               )}%`}
             </div>
           </div>
+          <div>{`${questions[qid].optionOne.votes.length} out of ${
+            questions[qid].optionOne.votes.length +
+            questions[qid].optionTwo.votes.length
+          } votes`}</div>
         </div>
         <div
           className={styles.voteBlock}
@@ -80,6 +85,10 @@ export default function VotingResultContent() {
               )}%`}
             </div>
           </div>
+          <div>{`${questions[qid].optionTwo.votes.length} out of ${
+            questions[qid].optionOne.votes.length +
+            questions[qid].optionTwo.votes.length
+          } votes`}</div>
         </div>
       </div>
     </div>

@@ -1,12 +1,21 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import VerticalDivider from "./componentLab/VerticalDivider";
 import Avatar from "./componentLab/Avatar";
 import Button from "./componentLab/Button";
 import styles from "./Question.module.css";
 export default function question(props) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  let history = useHistory();
+  const history = useHistory();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const authedUser = useSelector((state) => state.authedUser);
+  if (!authedUser) {
+    history.push({
+      pathname: "/",
+      state: { prevRoute: `/questions/${props.qid}` },
+    });
+  }
   const votingQuestion = () => {
     const questionsArray = props.question.split(" or ");
     history.push(`/questions/${props.qid}`, {

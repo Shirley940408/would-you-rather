@@ -12,7 +12,7 @@ import QuestionBoard from "./QuestionBoard";
 import NavBar from "./NavBar";
 import SignIn from "./SignIn";
 import NotExisted from "./NotExisted";
-import CreateNewQuestionContent from "./CreateNewQuestionContent";
+import CreateNewQuestion from "./CreateNewQuestion";
 import VoteNewQuestion from "./VoteNewQuestion";
 import VotingResult from "./VotingResult";
 export default function App() {
@@ -20,29 +20,27 @@ export default function App() {
   const authedUser = useSelector((state) => state.authedUser);
   return (
     <div className="container">
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact component={QuestionBoard} path="/home" />
-          <Route exact component={CreateNewQuestionContent} path="/add" />
-          <Route exact component={SignIn} path="/" />
-          <Route exact component={ScorePage} path="/leaderBoard" />
-          <Route exact component={VoteNewQuestion} path="/questions/:qid" />
-          <Route exact component={VotingResult} path="/votingResult" />
-          <Route component={NotExisted}>
-            {!authedUser ? (
-              <Redirect
-                to={{
-                  pathname: "/",
-                  state: { prevRoute: location.pathname },
-                }}
-              />
-            ) : (
-              <NotExisted />
-            )}
-          </Route>
-        </Switch>
-      </Router>
+      <NavBar />
+      <Switch>
+        <Route exact component={QuestionBoard} path="/home" />
+        <Route exact component={CreateNewQuestion} path="/add" />
+        <Route exact component={SignIn} path="/" />
+        <Route exact component={ScorePage} path="/leaderBoard" />
+        <Route exact component={VoteNewQuestion} path="/questions/:qid" />
+        <Route exact component={VotingResult} path="/votingResult" />
+        <Route component={NotExisted}>
+          {!authedUser ? (
+            <Redirect
+              to={{
+                pathname: "/",
+                state: { prevRoute: location.pathname },
+              }}
+            />
+          ) : (
+            <NotExisted />
+          )}
+        </Route>
+      </Switch>
     </div>
   );
 }

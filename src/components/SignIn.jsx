@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { handleUsers } from "../actions/shared";
+import { handleInitialData } from "../actions/shared";
 import SignInTop from "./SignInTop";
 import SignInContent from "./SignInContent";
 import ContainerCoat from "./componentLab/ContainerCoat";
@@ -11,7 +11,7 @@ export default function SignIn(props) {
   const location = useLocation();
   useEffect(() => {
     try {
-      dispatch(handleUsers());
+      dispatch(handleInitialData());
     } catch (e) {
       console.error(e);
     }
