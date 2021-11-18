@@ -7,9 +7,18 @@ import VerticalDivider from "./componentLab/VerticalDivider";
 const lightGreen = "#CDFFDD";
 export default function VotingResultContent() {
   const questions = useSelector((state) => state.questions);
+  const authedUser = useSelector((state) => state.authedUser);
   const location = useLocation();
-
-  const { answer, qid, src } = location.state;
+  const { qid, src } = location.state;
+  const votedResult = () => {
+    if (questions[qid].optionOne.votes.includes(authedUser)) {
+      return "optionOne";
+    }
+    if (questions[qid].optionTwo.votes.includes(authedUser)) {
+      return "optionTwo";
+    }
+  };
+  let answer = votedResult();
   return (
     <div className={styles.container}>
       <Avatar src={src} class={styles.avatar} />

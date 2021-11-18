@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-  useLocation,
-} from "react-router-dom";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ScorePage from "./ScorePage";
 import QuestionBoard from "./QuestionBoard";
@@ -27,7 +21,7 @@ export default function App() {
         <Route exact component={SignIn} path="/" />
         <Route exact component={ScorePage} path="/leaderBoard" />
         <Route exact component={VoteNewQuestion} path="/questions/:qid" />
-        <Route exact component={VotingResult} path="/votingResult" />
+        <Route exact component={VotingResult} path={"/votingResult"} />
         <Route component={NotExisted}>
           {!authedUser ? (
             <Redirect

@@ -3,6 +3,7 @@ import ContainerCoat from "./componentLab/ContainerCoat";
 import { useSelector } from "react-redux";
 import QuestionTop from "./QuestionTop";
 import VoteNewQuestionContent from "./VoteNewQuestionContent";
+import VotingResult from "./VotingResult";
 import NotExisted from "./NotExisted";
 
 export default function VoteNewQuestion() {
@@ -29,6 +30,12 @@ export default function VoteNewQuestion() {
   }
   const question = questions[params.qid];
   const user = users[question.author];
+  if (
+    questions[params.qid].optionOne.votes.includes(authedUser) ||
+    questions[params.qid].optionTwo.votes.includes(authedUser)
+  ) {
+    return <VotingResult />;
+  }
   return ContainerCoat(
     VoteNewQuestionContent,
     QuestionTop,
